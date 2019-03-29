@@ -1,7 +1,6 @@
-/** Made By Jeremiah
-* For Fun :)
+/** Made By rjcream (PotatoHer0, Jeremiah)
+* (Final Verson of This Game)
 */
-
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -14,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class TicTacToe extends JFrame {
+public class Main extends JFrame {
 	JButton one = new JButton("     ");
 	JButton two = new JButton("     ");
 	JButton three = new JButton("     ");
@@ -46,11 +45,21 @@ public class TicTacToe extends JFrame {
 	boolean player1Up = true;
 
 	public static void main(String[] args) {
-		TicTacToe gui = new TicTacToe();
+		Main gui = new Main();
 		gui.run();
 	}
 
 	public void run() {
+		one.setBackground(Color.white);
+		two.setBackground(Color.white);
+		three.setBackground(Color.white);
+		four.setBackground(Color.white);
+		five.setBackground(Color.white);
+		six.setBackground(Color.white);
+		seven.setBackground(Color.white);
+		eight.setBackground(Color.white);
+		nine.setBackground(Color.white);
+		
 		setTitle("Tic-Tac-Toe");
 		GridBagLayout layout = new GridBagLayout();
 		board.setLayout(layout);
@@ -102,7 +111,7 @@ public class TicTacToe extends JFrame {
 		backround.add(whoIsUp, location);
 
 		add(backround);
-		setSize(250, 200);
+		pack();
 		setVisible(true);
 
 	}
@@ -126,41 +135,65 @@ public class TicTacToe extends JFrame {
 		eight.setEnabled(false);
 		nine.setEnabled(false);
 	}
-	
+
 	public void checkIfWon() {
 		if (b1Claimer == b2Claimer && b2Claimer == b3Claimer) {
 			winner.setText("\"" + b1Claimer + "\" Has Won!");
+			one.setBackground(Color.yellow);
+			two.setBackground(Color.yellow);
+			three.setBackground(Color.yellow);
 			lockButtons();
-		}
-		if (b4Claimer == b5Claimer && b5Claimer == b6Claimer) {
+		} else if (b4Claimer == b5Claimer && b5Claimer == b6Claimer) {
 			winner.setText("\"" + b4Claimer + "\" Has Won!");
+			four.setBackground(Color.yellow);
+			five.setBackground(Color.yellow);
+			six.setBackground(Color.yellow);
 			lockButtons();
-		}
-		if (b7Claimer == b8Claimer && b8Claimer == b9Claimer) {
+		} else if (b7Claimer == b8Claimer && b8Claimer == b9Claimer) {
 			winner.setText("\"" + b7Claimer + "\" Has Won!");
+			seven.setBackground(Color.yellow);
+			eight.setBackground(Color.yellow);
+			nine.setBackground(Color.yellow);
 			lockButtons();
 		}
 
-		if (b1Claimer == b4Claimer && b4Claimer == b7Claimer) {
+		else if (b1Claimer == b4Claimer && b4Claimer == b7Claimer) {
 			winner.setText("\"" + b1Claimer + "\" Has Won!");
+			one.setBackground(Color.yellow);
+			four.setBackground(Color.yellow);
+			seven.setBackground(Color.yellow);
 			lockButtons();
-		}
-		if (b2Claimer == b5Claimer && b5Claimer == b8Claimer) {
+		} else if (b2Claimer == b5Claimer && b5Claimer == b8Claimer) {
 			winner.setText("\"" + b2Claimer + "\" Has Won!");
+			two.setBackground(Color.yellow);
+			five.setBackground(Color.yellow);
+			eight.setBackground(Color.yellow);
 			lockButtons();
-		}
-		if (b3Claimer == b6Claimer && b6Claimer == b9Claimer) {
+		} else if (b3Claimer == b6Claimer && b6Claimer == b9Claimer) {
 			winner.setText("\"" + b3Claimer + "\" Has Won!");
+			three.setBackground(Color.yellow);
+			six.setBackground(Color.yellow);
+			nine.setBackground(Color.yellow);
 			lockButtons();
 		}
 
-		if (b1Claimer == b5Claimer && b5Claimer == b9Claimer) {
+		else if (b1Claimer == b5Claimer && b5Claimer == b9Claimer) {
 			winner.setText("\"" + b1Claimer + "\" Has Won!");
+			one.setBackground(Color.yellow);
+			five.setBackground(Color.yellow);
+			nine.setBackground(Color.yellow);
 			lockButtons();
-		}
-		if (b3Claimer == b5Claimer && b5Claimer == b7Claimer) {
+		} else if (b3Claimer == b5Claimer && b5Claimer == b7Claimer) {
 			winner.setText("\"" + b3Claimer + "\" Has Won!");
+			three.setBackground(Color.yellow);
+			five.setBackground(Color.yellow);
+			seven.setBackground(Color.yellow);
 			lockButtons();
+		} else if (one.isEnabled() == false && two.isEnabled() == false && three.isEnabled() == false
+				&& four.isEnabled() == false && five.isEnabled() == false && six.isEnabled() == false
+				&& seven.isEnabled() == false && eight.isEnabled() == false && nine.isEnabled() == false) {
+			winner.setText("It's A Tie!");
+
 		}
 		swapPlayers();
 	}
@@ -338,6 +371,15 @@ public class TicTacToe extends JFrame {
 			b7Claimer = "12442l41";
 			b8Claimer = "12414p1";
 			b9Claimer = "12414m24";
+			one.setBackground(Color.white);
+			two.setBackground(Color.white);
+			three.setBackground(Color.white);
+			four.setBackground(Color.white);
+			five.setBackground(Color.white);
+			six.setBackground(Color.white);
+			seven.setBackground(Color.white);
+			eight.setBackground(Color.white);
+			nine.setBackground(Color.white);
 			player1Up = true;
 			winner.setText("No One Has Won Yet!");
 
